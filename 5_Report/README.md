@@ -9,8 +9,8 @@ This system is primarily intended for the storage of banking information. The C 
 2. Manage Bank Records
 3. Withdraw money
 4. Deposit money
-5. create different types of accounts (Savings,current,Fixed deposit)
-
+5. create different types of accounts (Savings,current)
+6. Search accounts
 
 ## Low level requirements
 1. Add the customer id, name, amount.
@@ -31,6 +31,7 @@ This system is primarily intended for the storage of banking information. The C 
 # SWOT ANALYSIS
 ![swot](https://user-images.githubusercontent.com/98818228/154980738-04154de1-887f-449a-9271-ec452c6d0dd9.PNG)
 
+
 ## 4W's and 1'H
 
 ## Who
@@ -50,3 +51,48 @@ In the banks
 ## How
 
 We can implement this to do the basic banking activities and the admin can keep the track of all the records and about customer details. And customers can deposit , withdraw and create different types of accounts.
+
+
+# Design 
+# High Level Design
+
+## Architecture Design
+
+![design](https://user-images.githubusercontent.com/98818228/152687123-10db9ae7-3db2-42cd-859a-c5742ac9933e.PNG)
+
+
+# Usecase Diagram
+![uml](https://user-images.githubusercontent.com/98818228/152687161-9e8c8aec-0ee0-498b-9ba7-daf259c0824a.jpg)
+
+
+# Low Level Design
+## Level0
+![0level](https://user-images.githubusercontent.com/98818228/152687175-0d825cfe-bf38-41f0-b027-7eb704b3f920.jpg)
+
+
+
+## Level1
+
+![level1 (1)](https://user-images.githubusercontent.com/98818228/152687185-71dcb9fc-1e8c-45b5-9ad8-80fe5c36c7db.jpg)
+
+
+# Output Screenshots
+## Main Menu
+
+
+
+## Create Account 1 (Shows no amount <= 0 valid)
+
+
+
+
+
+## Deposit Amount operation
+
+
+## Withdraw Amount operation (Shows withdraw amount should be less than or equal to current balance )
+
+
+## Display all accounts (Admin)
+
+
