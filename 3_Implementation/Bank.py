@@ -58,7 +58,7 @@ class depositwithdraw(User):  # derived constructors from parent class
     def depositamount(self):
         """summary
         """
-        print("******************************************")
+        print("******************************************\n")
         amount = int(input("Enter amount to be deposited"))
         try:
             if amount <= 0:
@@ -73,6 +73,7 @@ class depositwithdraw(User):  # derived constructors from parent class
     def withdrawamount(self):
         """summary
         """
+        print("******************************************\n")
         amount = int(input("Enter amount to be withdraw"))
         try:
             if amount <= 0:
@@ -87,6 +88,7 @@ class depositwithdraw(User):  # derived constructors from parent class
     def report(self):
         """summary
         """
+        print("******************************************\n")
         print(self.ACCNUMBER, " ", self.username, " ", self.INPUTAMT, " ", self.ACCTYPE)
         print("Total amount is:")
         print(self.totalamount)
