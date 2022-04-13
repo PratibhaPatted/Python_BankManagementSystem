@@ -1,4 +1,19 @@
-# Output Screenshots
+# TestPlan
+
+| Test Id | HLT id | Description | Expected Output | Actual Output | PASS\ FAIL |
+| --------|--------|-------------|-----------------|---------------|------------|
+| T_1     | H_01   | Enter positive value for balance input| input > 0 | input > 0| PASS |
+| T_2     | H_02   | Enter positive value for deposit amount | deposit>=0 | deposit>=0 | PASS |
+| T_3     | H_03   | Enter withdraw amount greater than current balance | Valid | Valid| PASS|
+| T_4     | H_04   | No amount/balance <=0 | Invalid | Invalid | PASS|
+| T_5     | H_01   | Enter negative or zero value for deposit amount |Invalid | Invalid | PASS |
+
+
+
+
+
+
+## Output Screenshots
 ## Main Menu
 
 ![4main](https://user-images.githubusercontent.com/98818228/163027370-6011f670-5a05-45b5-bddc-bedbe0cf6bd3.PNG)
