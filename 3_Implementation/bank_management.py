@@ -11,7 +11,7 @@ class User(): # multiple inheritance
     INPUTAMT = 0
     ACCTYPE = ""
     @classmethod
-    def __init__(self,amountno, username, inputamount, type):
+    def __init__iterable(self,amountno, username, inputamount, type):
         self.ACCNUMBER =amountno
         self.username = username
         self.INPUTAMT = inputamount
@@ -35,23 +35,20 @@ INPUTAMT = int(input("Enter deposit amount: \n"))
 try:
     if INPUTAMT <= 0:
         print("invalid input amount")
-except:
-    ValueError
+except TypeError as excep:
+    print("Error is", excep)
 finally:
     print("Input amount", INPUTAMT)
 ACCTYPE = input("Enter account type: SA for Savings Account, CA for Current Account \n")
 
-obj = User(ACCNUMBER, username, INPUTAMT, ACCTYPE)
+obj = User()
 obj.display()
 
 
-# derived/child class for method print details
-
-
-class depositwithdraw(User):  # derived constructors from parent class
+class Depositwithdraw(User):  # derived constructors from parent class
     """summary
     """
-    def __init__(self, totalamount, amount):
+    def _init_Deposit(self, totalamount, amount):
         self.totalamount = totalamount
         self.amount = amount
 
@@ -63,8 +60,8 @@ class depositwithdraw(User):  # derived constructors from parent class
         try:
             if amount <= 0:
                 print("invalid")
-        except:
-            ValueError
+        except TypeError as excep:
+            print("Error is", excep)
         finally:
             print("amount", amount)
         self.totalamount = self.INPUTAMT + amount
@@ -78,8 +75,8 @@ class depositwithdraw(User):  # derived constructors from parent class
         try:
             if amount <= 0:
                 print("invalid")
-        except:
-            ValueError
+        except TypeError as excep:
+            print("Error is", excep)
         finally:
             print("amount", amount)
         self.totalamount = self.INPUTAMT - amount
@@ -128,24 +125,19 @@ class depositwithdraw(User):  # derived constructors from parent class
 
 # class to display main options
 
-obj1 = depositwithdraw(1234, 5000)
-obj2 = depositwithdraw(1234, 5000)
+obj1 = Depositwithdraw()
+obj2 = Depositwithdraw()
 obj1.depositamount()
 obj2.withdrawamount()
 obj2.report()
 
-class maindisplay(depositwithdraw):
+class Maindisplay(Depositwithdraw):
     """summary
 
     Args:
-        depositwithdraw (type): description
+        Depositwithdraw (type): description
     """
-    global ACCNUMBER
-    global USERNAME
-    global INPUTAMT
-    global ACCTYPE
-
-    def intro(self):
+    def introduction(self):
         """summary
         """
         print("\t\t\t\t****")
@@ -188,5 +180,5 @@ while CH != 5:
 
     CH = input("Enter your choice : \n")
 
-obj3 = maindisplay()
-obj3.intro()
+obj3 = Maindisplay()
+obj3.introduction()
