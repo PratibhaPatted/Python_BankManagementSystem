@@ -2,11 +2,11 @@
 
 | Test Id | HLT id | Description | Expected Output | Actual Output | PASS\ FAIL |
 | --------|--------|-------------|-----------------|---------------|------------|
-| T_1     | H_01   | Enter positive value for balance input| input > 0 | input > 0| PASS |
-| T_2     | H_02   | Enter positive value for deposit amount | deposit>=0 | deposit>=0 | PASS |
-| T_3     | H_03   | Enter withdraw amount greater than current balance | Valid | Valid| PASS|
-| T_4     | H_04   | No amount/balance <=0 | Invalid | Invalid | PASS|
-| T_5     | H_01   | Enter negative or zero value for deposit amount |Invalid | Invalid | PASS |
+| T_01     | H_01   | Enter positive value for balance input| input > 0 | input > 0| PASS |
+| T_02     | H_02   | Enter positive value for deposit amount | deposit>=0 | deposit>=0 | PASS |
+| T_03     | H_03   | Enter withdraw amount greater than current balance | Valid | Valid| PASS|
+| T_04     | H_04   | No amount/balance <=0 | Invalid | Invalid | PASS|
+| T_05     | H_01   | Enter negative or zero value for deposit amount |Invalid | Invalid | PASS |
 
 
 
