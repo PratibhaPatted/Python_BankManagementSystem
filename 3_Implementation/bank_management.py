@@ -11,12 +11,12 @@ class User(): # multiple inheritance
     INPUTAMT = 0
     ACCTYPE = ""
     @classmethod
-    def __init__iterable(self,amountno, username, inputamount, type):
+    def inititerable(self,amountno, username, inputamount, type):
         self.ACCNUMBER =amountno
         self.username = username
         self.INPUTAMT = inputamount
         self.ACCTYPE = type
-
+    @classmethod
     def display(self):
         """summary
         """
@@ -29,7 +29,7 @@ class User(): # multiple inheritance
         print("\nAccount Created!\n")
 
 
-ACCNUMBER = input("Enter account number: \n")
+ACCNUMBER = int(input("Enter account number: \n"))
 username = input("Enter the user name: \n")
 INPUTAMT = int(input("Enter deposit amount: \n"))
 try:
@@ -40,8 +40,19 @@ except TypeError as excep:
 finally:
     print("Input amount", INPUTAMT)
 ACCTYPE = input("Enter account type: SA for Savings Account, CA for Current Account \n")
-
+"""
+str1 = "SA"
+str2 = "CA"
+try:
+    if str1 == "SA":
+        print("Valid input")
+    elif str2 == "CA":
+        print("Valid account type")
+except:
+    print ("Wrong account type , use SA/CA")
+"""
 obj = User()
+obj.inititerable(ACCNUMBER,username,INPUTAMT,ACCTYPE)
 obj.display()
 
 
