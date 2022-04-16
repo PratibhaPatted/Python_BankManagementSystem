@@ -3,5 +3,4 @@
 
 ## pylint score
 
-
-![pylint](https://user-images.githubusercontent.com/98818228/163107783-7b35e575-912a-4ec1-8896-27c9b7cec8a4.PNG)
+![pylint](https://user-images.githubusercontent.com/98818228/163664997-cb602d7f-e4ef-437e-9046-56cfb91011a2.PNG)
