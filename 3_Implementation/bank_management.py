@@ -1,22 +1,21 @@
 """summary
-
     Returns:
-        type: description
+        user_type: description
     """
 class User(): # multiple inheritance
     """summary
     """
     ACCNUMBER = 0
-    username = ""
+    USER_NAME = ""
     INPUTAMT = 0
     ACCTYPE = ""
     @classmethod
 
-    def createuser(self,amountno, username, inputamount, type):
+    def createuser(self,amountno, username, inputamount, user_type):
         self.ACCNUMBER =amountno
-        self.username = username
+        self.USER_NAME = username
         self.INPUTAMT = inputamount
-        self.ACCTYPE = type
+        self.ACCTYPE = user_type
     @classmethod
     def display(self):
         """summary
@@ -24,43 +23,42 @@ class User(): # multiple inheritance
         print("***********************************")
         print("ACCOUNT DETAILS \n")
         print("Account Number : ", self.ACCNUMBER)
-        print("Account User Name : ", self.username)
+        print("Account User Name : ", self.USER_NAME)
         print("Balance : ", self.INPUTAMT)
         print("Type of Account", self.ACCTYPE)
         print("\nAccount Created!\n")
 
 ACCNUMBER = int(input("Enter account number: \n"))
-username = input("Enter the user name: \n")
+USER_NAME = input("Enter the user name: \n")
 INPUTAMT = int(input("Enter deposit amount: \n"))
 try:
     if INPUTAMT <= 0:
         print("invalid input amount")
-except TypeError as excep:
-    print("Error is", excep)
+except ValueError as excepz_err:
+    print("Error is", excepz_err)
 finally:
     print("Input amount", INPUTAMT)
-ACCTYPE = input("Enter account type: SA for Savings Account, CA for Current Account \n")
+ACCTYPE = input("Enter account user_type: SA for Savings Account, CA for Current Account \n")
 
-str1 = "SA"
-str2 = "CA"
+STRINGP_1 = "SA"
+STRINGP_2 = "CA"
 try:
-    if str1 != "SA":
+    if STRINGP_1 != "SA":
         print("invalid input")
-    elif str2 != "CA":
-        print(" invalid type")
-except:
-    print ("vaild SA/CA")
+    elif STRINGP_2 != "CA":
+        print(" invalid user_type")
+        print ("vaild SA/CA")
 finally:
-    print("Wrong account type")
+    print("Wrong account user_type")
 
 obj = User()
-obj.createuser(ACCNUMBER,username,INPUTAMT,ACCTYPE)
+obj.createuser(ACCNUMBER,USER_NAME,INPUTAMT,ACCTYPE)
 obj.display()
 
 class Depositwithdraw(User):  # derived constructors from parent class
     """summary
     """
-    def _init_Deposit(self, totalamount, amount):
+    def deposit_amt(self, totalamount, amount):
         self.totalamount = totalamount
         self.amount = amount
 
@@ -72,8 +70,8 @@ class Depositwithdraw(User):  # derived constructors from parent class
         try:
             if amount <= 0:
                 print("invalid")
-        except TypeError as excep:
-            print("Error is", excep)
+        except ValueError as excepz_err:
+            print("Error is", excepz_err)
         finally:
             print("amount", amount)
         self.totalamount = self.INPUTAMT + amount
@@ -87,8 +85,8 @@ class Depositwithdraw(User):  # derived constructors from parent class
         try:
             if amount <= 0:
                 print("invalid")
-        except TypeError as excep:
-            print("Error is", excep)
+        except ValueError as excepz_err:
+            print("Error is", excepz_err)
         finally:
             print("amount", amount)
         self.totalamount = self.INPUTAMT - amount
@@ -98,41 +96,9 @@ class Depositwithdraw(User):  # derived constructors from parent class
         """summary
         """
         print("******************************************\n")
-        print(self.ACCNUMBER, " ", self.username, " ", self.INPUTAMT, " ", self.ACCTYPE)
+        print(self.ACCNUMBER, " ", self.USER_NAME, " ", self.INPUTAMT, " ", self.ACCTYPE)
         print("Total amount is:")
         print(self.totalamount)
-
-    def getamountno(self):
-        """summary
-
-        Returns:
-            type: description
-        """
-        return self.ACCNUMBER
-
-    def getusername(self):
-        """summary
-
-        Returns:
-            type: description
-        """
-        return self.username
-
-    def getdepositamount(self):
-        """summary
-
-        Returns:
-            type: description
-        """
-        return self.inputamount
-
-    def getaccounttype(self):
-        """summary
-
-        Returns:
-            type: description
-        """
-        return self.ACCTYPE
 
 
 # class to display main options
@@ -145,9 +111,8 @@ obj2.report()
 
 class Maindisplay(Depositwithdraw):
     """summary
-
     Args:
-        Depositwithdraw (type): description
+        Depositwithdraw (user_type): description
     """
     def introduction(self):
         """summary
@@ -162,7 +127,6 @@ CH = ''
 NUM = 0
 
 while CH != 5:
-    # system("cls");
     print("\tMAIN MENU")
     print("\t1. Create account")
     print("\t2. Deposit amount")
@@ -171,10 +135,9 @@ while CH != 5:
     print("\t5. Exit")
     print("\tSelect Your Option (1-5) ")
     CH = input()
-    # system("cls");
 
     if CH == '1':
-        obj.createuser()
+        obj.createuser( amountno=0, username = " ", inputamount=0, user_type= "")
     elif CH == '2':
         NUM = int(input("\tEnter to deposit account amount. : "))
         obj1.depositamount()
