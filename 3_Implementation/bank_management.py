@@ -11,7 +11,8 @@ class User(): # multiple inheritance
     INPUTAMT = 0
     ACCTYPE = ""
     @classmethod
-    def inititerable(self,amountno, username, inputamount, type):
+
+    def createuser(self,amountno, username, inputamount, type):
         self.ACCNUMBER =amountno
         self.username = username
         self.INPUTAMT = inputamount
@@ -25,9 +26,8 @@ class User(): # multiple inheritance
         print("Account Number : ", self.ACCNUMBER)
         print("Account User Name : ", self.username)
         print("Balance : ", self.INPUTAMT)
-        print("type of Account", self.ACCTYPE)
+        print("Type of Account", self.ACCTYPE)
         print("\nAccount Created!\n")
-
 
 ACCNUMBER = int(input("Enter account number: \n"))
 username = input("Enter the user name: \n")
@@ -40,21 +40,22 @@ except TypeError as excep:
 finally:
     print("Input amount", INPUTAMT)
 ACCTYPE = input("Enter account type: SA for Savings Account, CA for Current Account \n")
-"""
+
 str1 = "SA"
 str2 = "CA"
 try:
-    if str1 == "SA":
-        print("Valid input")
-    elif str2 == "CA":
-        print("Valid account type")
+    if str1 != "SA":
+        print("invalid input")
+    elif str2 != "CA":
+        print(" invalid type")
 except:
-    print ("Wrong account type , use SA/CA")
-"""
-obj = User()
-obj.inititerable(ACCNUMBER,username,INPUTAMT,ACCTYPE)
-obj.display()
+    print ("vaild SA/CA")
+finally:
+    print("Wrong account type")
 
+obj = User()
+obj.createuser(ACCNUMBER,username,INPUTAMT,ACCTYPE)
+obj.display()
 
 class Depositwithdraw(User):  # derived constructors from parent class
     """summary
@@ -164,16 +165,16 @@ while CH != 5:
     # system("cls");
     print("\tMAIN MENU")
     print("\t1. Create account")
-    print("\t2. DEPOSIT amount")
-    print("\t3. WITHDRAW amount")
+    print("\t2. Deposit amount")
+    print("\t3. Withdraw amount")
     print("\t4. Report ")
-    print("\t5. EXIT")
+    print("\t5. Exit")
     print("\tSelect Your Option (1-5) ")
     CH = input()
     # system("cls");
 
     if CH == '1':
-        obj.display()
+        obj.createuser()
     elif CH == '2':
         NUM = int(input("\tEnter to deposit account amount. : "))
         obj1.depositamount()
